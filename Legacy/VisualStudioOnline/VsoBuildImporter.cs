@@ -2,7 +2,6 @@
 using Inedo.BuildMaster.Artifacts;
 using Inedo.BuildMaster.Data;
 using Inedo.BuildMaster.Extensibility.BuildImporters;
-using Inedo.BuildMaster.Web;
 using Inedo.Diagnostics;
 using Inedo.Serialization;
 
@@ -12,6 +11,7 @@ namespace Inedo.BuildMasterExtensions.TFS.VisualStudioOnline
     [Description("Downloads and imports artifacts from Visual Studio Online.")]
     [BuildImporterTemplate(typeof(VsoBuildImporterTemplate))]
     [Inedo.Web.CustomEditor(typeof(VsoBuildImporterEditor))]
+    [PersistFrom("Inedo.BuildMasterExtensions.TFS.VisualStudioOnline.VsoBuildImporter,TFS")]
     public sealed class VsoBuildImporter : BuildImporterBase, ICustomBuildNumberProvider
     {
         [Persistent]

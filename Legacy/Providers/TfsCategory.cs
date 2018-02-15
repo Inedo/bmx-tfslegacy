@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using Inedo.BuildMaster.Extensibility.Providers.IssueTracking;
 using Microsoft.TeamFoundation.Framework.Client;
 using Microsoft.TeamFoundation.WorkItemTracking.Client;

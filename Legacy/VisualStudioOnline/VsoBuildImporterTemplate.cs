@@ -1,11 +1,11 @@
 ﻿using Inedo.BuildMaster.Extensibility.BuildImporters;
-using Inedo.BuildMaster.Web;
 using Inedo.Documentation;
 using Inedo.Serialization;
 
 namespace Inedo.BuildMasterExtensions.TFS.VisualStudioOnline
 {
     [Inedo.Web.CustomEditor(typeof(VsoBuildImporterTemplateEditor))]
+    [PersistFrom("Inedo.BuildMasterExtensions.TFS.VisualStudioOnline.VsoBuildImporterTemplate,TFS")]
     internal sealed class VsoBuildImporterTemplate : BuildImporterTemplateBase<VsoBuildImporter>
     {
         [Persistent]

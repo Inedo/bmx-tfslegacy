@@ -15,6 +15,7 @@ namespace Inedo.BuildMasterExtensions.TFS
     [DisplayName("Team Foundation Server")]
     [Description("Supports TFS 2010-2015.")]
     [Inedo.Web.CustomEditor(typeof(TfsIssueTrackingProviderEditor))]
+    [PersistFrom("Inedo.BuildMasterExtensions.TFS.TfsIssueTrackingProvider,TFS")]
     public sealed partial class TfsIssueTrackingProvider : IssueTrackerConnectionBase, IIssueStatusUpdater, IIssueCloser
     {
         /// <summary>

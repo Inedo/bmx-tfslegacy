@@ -3,13 +3,11 @@ using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Reflection;
 using System.Text.RegularExpressions;
 using Inedo.Agents;
 using Inedo.BuildMaster.Extensibility.Providers;
 using Inedo.BuildMaster.Extensibility.Providers.SourceControl;
 using Inedo.BuildMaster.Files;
-using Inedo.BuildMaster.Web;
 using Inedo.IO;
 using Inedo.Serialization;
 using Microsoft.TeamFoundation.Client;
@@ -20,6 +18,7 @@ namespace Inedo.BuildMasterExtensions.TFS
     [DisplayName("Team Foundation Server")]
     [Description("Supports TFS 2010-2015.")]
     [Inedo.Web.CustomEditor(typeof(TfsSourceControlProviderEditor))]
+    [PersistFrom("Inedo.BuildMasterExtensions.TFS.TfsSourceControlProvider,TFS")]
     public sealed class TfsSourceControlProvider : SourceControlProviderBase, ILocalWorkspaceProvider, ILabelingProvider, IRevisionProvider
     {
         /// <summary>

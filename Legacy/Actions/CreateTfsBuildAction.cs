@@ -4,11 +4,8 @@ using System.Linq;
 using Inedo.Agents;
 using Inedo.BuildMaster;
 using Inedo.BuildMaster.Data;
-using Inedo.BuildMaster.Extensibility.Agents;
-using Inedo.BuildMaster.Web;
 using Inedo.Documentation;
 using Inedo.Serialization;
-using Inedo.Web;
 using Microsoft.TeamFoundation.Build.Client;
 
 namespace Inedo.BuildMasterExtensions.TFS
@@ -19,6 +16,7 @@ namespace Inedo.BuildMasterExtensions.TFS
     [Inedo.Web.CustomEditor(typeof(CreateTfsBuildActionEditor))]
     [Tag(Tags.Builds)]
     [Tag("tfs")]
+    [PersistFrom("Inedo.BuildMasterExtensions.TFS.CreateTfsBuildAction,TFS")]
     public sealed class CreateTfsBuildAction : TfsActionBase
     {
         /// <summary>

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using System.Web;
-using Inedo.BuildMaster.Extensibility.IssueTrackerConnections;
 using Inedo.Extensibility.IssueSources;
 using Microsoft.TeamFoundation.Client;
 using Microsoft.TeamFoundation.WorkItemTracking.Client;

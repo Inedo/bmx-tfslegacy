@@ -8,11 +8,9 @@ using Inedo.BuildMaster.Data;
 using Inedo.BuildMaster.Extensibility.Agents;
 using Inedo.BuildMaster.Extensibility.BuildImporters;
 using Inedo.BuildMaster.Files;
-using Inedo.BuildMaster.Web;
 using Inedo.Data;
 using Inedo.Diagnostics;
 using Inedo.Serialization;
-using Inedo.Web;
 
 namespace Inedo.BuildMasterExtensions.TFS.BuildImporter
 {
@@ -20,6 +18,7 @@ namespace Inedo.BuildMasterExtensions.TFS.BuildImporter
     [Description("Imports artifacts from TFS.")]
     [BuildImporterTemplate(typeof(TfsBuildImporterTemplate))]
     [Inedo.Web.CustomEditor(typeof(TfsBuildImporterEditor))]
+    [PersistFrom("Inedo.BuildMasterExtensions.TFS.BuildImporter.TfsBuildImporter,TFS")]
     public sealed class TfsBuildImporter : BuildImporterBase, ICustomBuildNumberProvider
     {
         [Persistent]

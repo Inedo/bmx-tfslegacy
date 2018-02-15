@@ -8,7 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System;
 
 namespace Inedo.Extensions.TFS.VisualStudioOnline.Model
 {

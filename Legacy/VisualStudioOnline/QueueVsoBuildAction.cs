@@ -5,8 +5,6 @@ using System.Threading;
 using Inedo.Agents;
 using Inedo.BuildMaster;
 using Inedo.BuildMaster.Data;
-using Inedo.BuildMaster.Extensibility.Actions;
-using Inedo.BuildMaster.Web;
 using Inedo.Documentation;
 using Inedo.Extensions.TFS.Clients.Rest;
 using Inedo.Serialization;
@@ -19,6 +17,7 @@ namespace Inedo.BuildMasterExtensions.TFS.VisualStudioOnline
     [Inedo.Web.CustomEditor(typeof(QueueVsoBuildActionEditor))]
     [Tag(Tags.Builds)]
     [Tag("tfs")]
+    [PersistFrom("Inedo.BuildMasterExtensions.TFS.VisualStudioOnline.QueueVsoBuildAction,TFS")]
     public sealed class QueueVsoBuildAction : TfsActionBase
     {
         /// <summary>

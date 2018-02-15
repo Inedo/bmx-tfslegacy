@@ -8,7 +8,6 @@ using Inedo.BuildMaster.Artifacts;
 using Inedo.BuildMaster.Data;
 using Inedo.BuildMaster.Extensibility.Agents;
 using Inedo.BuildMaster.Files;
-using Inedo.BuildMaster.Web;
 using Inedo.Documentation;
 using Inedo.Serialization;
 using Microsoft.TeamFoundation.Build.Client;
@@ -22,6 +21,7 @@ namespace Inedo.BuildMasterExtensions.TFS
     [Tag(Tags.Artifacts)]
     [Tag(Tags.Builds)]
     [Tag("tfs")]
+    [PersistFrom("Inedo.BuildMasterExtensions.TFS.CreateTfsBuildOutputArtifactAction,TFS")]
     public sealed class CreateTfsBuildOutputArtifactAction : TfsActionBase
     {
         /// <summary>

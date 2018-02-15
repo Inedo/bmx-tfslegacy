@@ -3,7 +3,6 @@ using System.Linq;
 using Inedo.Agents;
 using Inedo.BuildMaster.Extensibility.Agents;
 using Inedo.BuildMaster.Extensibility.Configurers.Extension;
-using Inedo.BuildMaster.Web;
 using Inedo.Extensions.TFS;
 using Inedo.Serialization;
 using Microsoft.TeamFoundation.Build.Client;
@@ -14,6 +13,7 @@ using Microsoft.TeamFoundation.Server;
 namespace Inedo.BuildMasterExtensions.TFS
 {
     [Inedo.Web.CustomEditor(typeof(TfsConfigurerEditor))]
+    [PersistFrom("Inedo.BuildMasterExtensions.TFS.TfsConfigurer,TFS")]
     public sealed class TfsConfigurer : ExtensionConfigurerBase, IVsoConnectionInfo
     {
         public static readonly string TypeQualifiedName = typeof(TfsConfigurer).FullName + "," + typeof(TfsConfigurer).Assembly.GetName().Name;

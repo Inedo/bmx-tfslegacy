@@ -2,11 +2,8 @@
 using Inedo.Agents;
 using Inedo.BuildMaster;
 using Inedo.BuildMaster.Artifacts;
-using Inedo.BuildMaster.Extensibility.Actions;
-using Inedo.BuildMaster.Web;
 using Inedo.Documentation;
 using Inedo.Serialization;
-using Inedo.Web;
 
 namespace Inedo.BuildMasterExtensions.TFS.VisualStudioOnline
 {
@@ -16,6 +13,7 @@ namespace Inedo.BuildMasterExtensions.TFS.VisualStudioOnline
     [Inedo.Web.CustomEditor(typeof(ImportVsoArtifactActionEditor))]
     [Tag(Tags.Builds)]
     [Tag("tfs")]
+    [PersistFrom("Inedo.BuildMasterExtensions.TFS.VisualStudioOnline.ImportVsoArtifactAction,TFS")]
     public sealed class ImportVsoArtifactAction : TfsActionBase
     {
         /// <summary>

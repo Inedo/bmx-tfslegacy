@@ -1,6 +1,5 @@
 ﻿using System;
 using Inedo.BuildMaster.Extensibility.IssueTrackerConnections;
-using Inedo.BuildMaster.Web;
 using Inedo.Documentation;
 using Inedo.Serialization;
 
@@ -8,6 +7,7 @@ namespace Inedo.BuildMasterExtensions.TFS.Providers
 {
     [Serializable]
     [Inedo.Web.CustomEditor(typeof(TfsIssueTrackingApplicationFilterEditor))]
+    [PersistFrom("Inedo.BuildMasterExtensions.TFS.Providers.TfsIssueTrackingApplicationFilter,TFS")]
     public sealed class TfsIssueTrackingApplicationFilter : IssueTrackerApplicationConfigurationBase
     {
         [Persistent]

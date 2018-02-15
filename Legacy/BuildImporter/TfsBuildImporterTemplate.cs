@@ -1,11 +1,11 @@
 ﻿using Inedo.BuildMaster.Extensibility.BuildImporters;
-using Inedo.BuildMaster.Web;
 using Inedo.Documentation;
 using Inedo.Serialization;
 
 namespace Inedo.BuildMasterExtensions.TFS.BuildImporter
 {
     [Inedo.Web.CustomEditor(typeof(TfsBuildImporterTemplateEditor))]
+    [PersistFrom("Inedo.BuildMasterExtensions.TFS.BuildImporter.TfsBuildImporterTemplate,TFS")]
     internal sealed class TfsBuildImporterTemplate : BuildImporterTemplateBase<TfsBuildImporter>
     {
         [Persistent]
