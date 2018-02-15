@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{035CF878-0AE5-4249-A9DA-A9DF2EFE2B4D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Inedo.BuildMasterExtensions.TFS</RootNamespace>
+    <AssemblyName>TFSLegacy</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;BuildMaster</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;BuildMaster</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BuildMaster.Web.Controls, Version=6.0.0.45, Culture=neutral, PublicKeyToken=112cfb71329714a6, processorArchitecture=MSIL">
+      <HintPath>packages\Inedo.BuildMaster.SDK.6.0.0\lib\net452\BuildMaster.Web.Controls.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="BuildMasterCore, Version=6.0.0.45, Culture=neutral, PublicKeyToken=112cfb71329714a6, processorArchitecture=MSIL">
+      <HintPath>packages\Inedo.BuildMaster.SDK.6.0.0\lib\net452\BuildMasterCore.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Inedo.Agents.Client, Version=1000.0.0.0, Culture=neutral, PublicKeyToken=9de986a2f8db80fc, processorArchitecture=MSIL">
+      <HintPath>packages\Inedo.SDK.1.0.4-pre0021\lib\net452\Inedo.Agents.Client.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Inedo.ExecutionEngine, Version=64.0.0.0, Culture=neutral, PublicKeyToken=68703f0e52007e75, processorArchitecture=MSIL">
+      <HintPath>packages\Inedo.SDK.1.0.4-pre0021\lib\net452\Inedo.ExecutionEngine.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Inedo.SDK, Version=1.0.0.0, Culture=neutral, PublicKeyToken=29fae5dec3001603, processorArchitecture=MSIL">
+      <HintPath>packages\Inedo.SDK.1.0.4-pre0021\lib\net452\Inedo.SDK.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="InedoLib, Version=1000.0.0.0, Culture=neutral, PublicKeyToken=112cfb71329714a6, processorArchitecture=MSIL">
+      <HintPath>packages\Inedo.SDK.1.0.4-pre0021\lib\net452\InedoLib.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.TeamFoundation.Build.Client">
+      <HintPath>lib\Microsoft.TeamFoundation.Build.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Build.Common">
+      <HintPath>lib\Microsoft.TeamFoundation.Build.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Client">
+      <HintPath>lib\Microsoft.TeamFoundation.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Common">
+      <HintPath>lib\Microsoft.TeamFoundation.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.VersionControl.Client">
+      <HintPath>lib\Microsoft.TeamFoundation.VersionControl.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.WorkItemTracking.Client">
+      <HintPath>lib\Microsoft.TeamFoundation.WorkItemTracking.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.WorkItemTracking.Common">
+      <HintPath>lib\Microsoft.TeamFoundation.WorkItemTracking.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.WorkItemTracking.Proxy">
+      <HintPath>lib\Microsoft.TeamFoundation.WorkItemTracking.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Inedo.SDK.1.0.4-pre0021\lib\net452\Newtonsoft.Json.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clients\ArtifactDownloader.cs" />
+    <Compile Include="Clients\Rest\Model\Common.cs" />
+    <Compile Include="Clients\Rest\Model\Error.cs" />
+    <Compile Include="Clients\Rest\Model\GetBuildArtifactsResponse.cs" />
+    <Compile Include="Clients\Rest\Model\GetBuildDefinitionResponse.cs" />
+    <Compile Include="Clients\Rest\Model\GetBuildDefinitionsResponse.cs" />
+    <Compile Include="Clients\Rest\Model\GetBuildResponse.cs" />
+    <Compile Include="Clients\Rest\Model\GetBuildsResponse.cs" />
+    <Compile Include="Clients\Rest\Model\GetIterationsResponse.cs" />
+    <Compile Include="Clients\Rest\Model\GetTeamProjectsResponse.cs" />
+    <Compile Include="Clients\Rest\Model\GetWiqlResponse.cs" />
+    <Compile Include="Clients\Rest\Model\GetWorkItemsResponse.cs" />
+    <Compile Include="Clients\Rest\Model\GetWorkItemTypesResponse.cs" />
+    <Compile Include="Clients\Rest\TfsRestApi.cs" />
+    <Compile Include="Clients\Rest\TfsRestIssue.cs" />
+    <Compile Include="Clients\SourceControl\MappedWorkspace.cs" />
+    <Compile Include="Clients\SourceControl\TfsSourceControlClient.cs" />
+    <Compile Include="Clients\SourceControl\TfsSourcePath.cs" />
+    <Compile Include="Clients\SourceControl\WorkspaceInfo.cs" />
+    <Compile Include="Clients\VsoArtifactImporter.cs" />
+    <Compile Include="IVsoConnectionInfo.cs" />
+    <Compile Include="Legacy\BuildDefinitionPicker.cs" />
+    <Compile Include="Legacy\BuildImporter\TfsBuildImporter.cs" />
+    <Compile Include="Legacy\BuildImporter\TfsBuildImporterEditor.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Legacy\BuildImporter\TfsBuildImporterTemplate.cs" />
+    <Compile Include="Legacy\Actions\CreateTfsBuildAction.cs" />
+    <Compile Include="Legacy\Actions\CreateTfsBuildActionEditor.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Legacy\Actions\CreateTfsBuildOutputArtifactActionEditor.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Legacy\BuildImporter\TfsBuildImporterTemplateEditor.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Legacy\Actions\CreateTfsBuildOutputArtifactAction.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Legacy\Providers\RemoteTfs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Legacy\Providers\TfsIssueTrackingApplicationFilter.cs" />
+    <Compile Include="Legacy\Providers\TfsIssueTrackingApplicationFilterEditor.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Legacy\Providers\TfsIssueTrackingProvider.Legacy.cs" />
+    <Compile Include="Legacy\Providers\TfsSourceControlContext.cs" />
+    <Compile Include="Legacy\TeamProjectPicker.cs" />
+    <Compile Include="Legacy\Providers\TfsCategory.cs" />
+    <Compile Include="Legacy\Providers\TfsIssue.cs" />
+    <Compile Include="Legacy\Providers\TfsIssueTrackingProvider.cs" />
+    <Compile Include="Legacy\Providers\TfsIssueTrackingProviderEditor.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Legacy\Actions\TfsActionBase.cs" />
+    <Compile Include="Legacy\TfsBuildInfo.cs" />
+    <Compile Include="Legacy\TfsConfigurer.cs" />
+    <Compile Include="Legacy\TfsConfigurerEditor.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Legacy\Providers\TfsSourceControlProvider.cs" />
+    <Compile Include="Legacy\Providers\TfsSourceControlProviderEditor.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Legacy\VisualStudioOnline\ImportVsoArtifactAction.cs" />
+    <Compile Include="Legacy\VisualStudioOnline\ImportVsoArtifactActionEditor.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Legacy\VisualStudioOnline\QueueVsoBuildAction.cs" />
+    <Compile Include="Legacy\VisualStudioOnline\QueueVsoBuildActionEditor.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Legacy\VisualStudioOnline\VsoArtifactImporter.cs" />
+    <Compile Include="Legacy\VisualStudioOnline\VsoBuildImporter.cs" />
+    <Compile Include="Legacy\VisualStudioOnline\VsoBuildImporterEditor.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Legacy\VisualStudioOnline\VsoBuildImporterTemplate.cs" />
+    <Compile Include="Legacy\VisualStudioOnline\VsoBuildImporterTemplateEditor.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="lib\license.txt" />
+    <Content Include="lib\Microsoft.TeamFoundation.Build.Client.dll" />
+    <Content Include="lib\Microsoft.TeamFoundation.Build.Common.dll" />
+    <Content Include="lib\Microsoft.TeamFoundation.Client.dll" />
+    <Content Include="lib\Microsoft.TeamFoundation.Common.dll" />
+    <Content Include="lib\Microsoft.TeamFoundation.VersionControl.Client.dll" />
+    <Content Include="lib\Microsoft.TeamFoundation.VersionControl.Common.dll" />
+    <Content Include="lib\Microsoft.TeamFoundation.WorkItemTracking.Client.DataStoreLoader.dll" />
+    <Content Include="lib\Microsoft.TeamFoundation.WorkItemTracking.Client.dll" />
+    <Content Include="lib\Microsoft.TeamFoundation.WorkItemTracking.Client.QueryLanguage.dll" />
+    <Content Include="lib\Microsoft.TeamFoundation.WorkItemTracking.Common.dll" />
+    <Content Include="lib\Microsoft.TeamFoundation.WorkItemTracking.Proxy.dll" />
+    <Content Include="lib\Microsoft.VisualStudio.Services.Client.dll" />
+    <Content Include="lib\Microsoft.VisualStudio.Services.Common.dll" />
+    <Content Include="lib\Microsoft.VisualStudio.Services.WebApi.dll" />
+    <Content Include="lib\Microsoft.WITDataStore32.dll" />
+    <Content Include="lib\Microsoft.WITDataStore64.dll" />
+    <Content Include="lib\readme.txt" />
+    <None Include="lib\Microsoft.WITDataStore32.dll">
+      <Link>Microsoft.WITDataStore32.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="lib\Microsoft.WITDataStore64.dll">
+      <Link>Microsoft.WITDataStore64.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Content Include="Legacy\TfsIssueTrackingApplicationFilterEditor.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>powershell -Command "if (Test-Path C:\Projects\BuildMaster\Extensions -PathType Container) { Compress-Archive -Path '$(TargetDir)*' -DestinationPath C:\Projects\BuildMaster\Extensions\$(TargetName).zip -Force; Move-Item C:\Projects\BuildMaster\Extensions\$(TargetName).zip -Destination C:\Projects\BuildMaster\Extensions\$(TargetName).bmx -Force }"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
